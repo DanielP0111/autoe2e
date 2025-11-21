@@ -51,6 +51,34 @@ Open the newly created `.env` file and populate it with your own API keys and co
 
 4. `ATLAS_URI`: The MongoDB Atlas URI for storing the Action-Feature Database (AFD) and Feature Database (FD).
 
+   - Sign up for a free account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
+   - Create a new project (or use an existing one)
+   - Click "Build a Database" and select the free tier (M0)
+   - Choose your preferred cloud provider and region
+   - Click "Create Cluster" (this may take a few minutes)
+   - **Set up database access:**
+     - Go to "Database Access" in the left sidebar
+     - Click "Add New Database User"
+     - Choose authentication method (Username/Password recommended)
+     - Create a username and password (save these securely)
+     - Set user privileges to "Read and write to any database"
+     - Click "Add User"
+   - **Set up network access:**
+     - Go to "Network Access" in the left sidebar
+     - Click "Add IP Address"
+     - For development, click "Allow Access from Anywhere" (0.0.0.0/0)
+     - For production, add only your specific IP addresses
+     - Click "Confirm"
+   - **Get your connection string:**
+     - Go to "Database" in the left sidebar
+     - Click "Connect" on your cluster
+     - Select "Connect your application"
+     - Choose "Python" as the driver and select your version
+     - Copy the connection string (it looks like: `mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority`)
+     - Replace `<username>` with your database username
+     - Replace `<password>` with your database password
+     - Paste the complete URI into your `.env` file as the value for `ATLAS_URI`
+
 ### Step 3: Run the Project
 
 Once your `.env` file is configured with the appropriate values, you can run the project using the following command:
