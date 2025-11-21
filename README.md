@@ -31,8 +31,25 @@ This file is required before running `main.py`. Without it, you will encounter r
 Open the newly created `.env` file and populate it with your own API keys and configuration values. The required variables are:
 
 1. `APP_NAME`: The name of the application you want to generate E2E test cases for. This needs to match one of the configs in `./configs` folder.
-2. `ANTHROPIC_API_KEY`: The API key for the Anthropic platform. You can get this by signing up at [Anthropic](https://anthropic.com/).
-3. `ATLAS_URI`: The MongoDB Atlas URI for storing the Action-Feature Database (AFD) and Feature Database (FD).
+
+2. `ANTHROPIC_API_KEY`: The API key for the Anthropic platform used for primary model reasoning.
+
+   - Sign up at [Anthropic Console](https://console.anthropic.com/)
+   - Navigate to the API Keys section
+   - Click "Create Key" and give it a name
+   - Copy the generated API key to your `.env` file
+   - **Important**: Verify that the model version in `autoe2e/llm_api_call.py` is the latest version, otherwise the application will crash
+   - **Optional**: You can switch from Anthropic's Sonnet to OpenAI's GPT-4 by changing `sonnet_chain` to `gpt4o_chain` in `autoe2e/infer_utils.py` (requires OpenAI API key)
+
+3. `OPENAI_API_KEY`: The API key for OpenAI platform used for generating feature embeddings.
+
+   - Sign up or log in at [OpenAI Platform](https://platform.openai.com/)
+   - Navigate to [API Keys](https://platform.openai.com/api-keys)
+   - Click "Create new secret key" and give it a name
+   - Copy the generated API key to your `.env` file (you won't be able to see it again)
+   - **Note**: This is required even if using Anthropic for reasoning, as OpenAI's embedding model is used to create feature embeddings for database storage
+
+4. `ATLAS_URI`: The MongoDB Atlas URI for storing the Action-Feature Database (AFD) and Feature Database (FD).
 
 ### Step 3: Run the Project
 
