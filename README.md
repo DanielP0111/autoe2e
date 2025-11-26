@@ -15,6 +15,54 @@ python --version
 
 If you need to install or upgrade Python, visit [python.org/downloads](https://www.python.org/downloads/).
 
+## Setup
+
+### Virtual Environment (Recommended)
+
+It is strongly recommended to use a virtual environment to isolate project dependencies and avoid conflicts with other Python projects.
+
+**Option 1: Using venv (built-in)**
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 2: Using virtualenv**
+
+```bash
+# Install virtualenv if not already installed
+pip install virtualenv
+
+# Create virtual environment
+virtualenv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 3: Using conda**
+
+```bash
+# Create virtual environment
+conda create -n autoe2e python=3.11
+
+# Activate environment
+conda activate autoe2e
+```
+
+Once activated, your terminal prompt should show the environment name (e.g., `(venv)` or `(autoe2e)`).
+
+
 ## Requirements
 
 Install the required packages using the following command:
@@ -22,6 +70,53 @@ Install the required packages using the following command:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Setup
+
+### Virtual Environment (Recommended)
+
+It is strongly recommended to use a virtual environment to isolate project dependencies and avoid conflicts with other Python projects.
+
+**Option 1: Using venv (built-in)**
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 2: Using virtualenv**
+
+```bash
+# Install virtualenv if not already installed
+pip install virtualenv
+
+# Create virtual environment
+virtualenv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 3: Using conda**
+
+```bash
+# Create virtual environment
+conda create -n autoe2e python=3.11
+
+# Activate environment
+conda activate autoe2e
+```
+
+Once activated, your terminal prompt should show the environment name (e.g., `(venv)` or `(autoe2e)`).
 
 ## Usage
 
