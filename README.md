@@ -4,6 +4,17 @@ Source code and benchmark subjects for "AutoE2E: Feature-Driven End-To-End Test 
 
 ![AutoE2E Workflow](./workflow.png)
 
+## Prerequisites
+
+- **Python 3.11 or higher** is required to run this project. The installation will fail on older Python versions.
+
+To check your Python version:
+```bash
+python --version
+```
+
+If you need to install or upgrade Python, visit [python.org/downloads](https://www.python.org/downloads/).
+
 ## Requirements
 
 Install the required packages using the following command:
