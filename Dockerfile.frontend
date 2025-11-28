@@ -9,8 +9,8 @@ WORKDIR /app
 # Install Angular CLI globally (use version that matches Angular in package.json)
 RUN npm install -g @angular/cli@18.0.3
 
-# Copy only package files first (for better layer caching)
-COPY benchmark/pet-clinic/spring-petclinic-angular/package*.json ./
+# Copy only package.json (not package-lock.json - it will be regenerated)
+COPY benchmark/pet-clinic/spring-petclinic-angular/package.json ./
 
 # Install dependencies with legacy peer deps flag
 RUN npm install --legacy-peer-deps

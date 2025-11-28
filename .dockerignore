@@ -82,5 +82,6 @@ benchmark/pet-clinic/spring-petclinic-angular/.idea/
 benchmark/pet-clinic/spring-petclinic-angular/.vscode/
 benchmark/pet-clinic/spring-petclinic-angular/coverage/
 benchmark/pet-clinic/spring-petclinic-angular/yarn.lock
+benchmark/pet-clinic/spring-petclinic-angular/package-lock.json
 
 
