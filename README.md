@@ -4,6 +4,128 @@ Source code and benchmark subjects for "AutoE2E: Feature-Driven End-To-End Test 
 
 ![AutoE2E Workflow](./workflow.png)
 
+## Project Structure
+
+```
+autoe2e/
+├── main.py                      # Main entry point for running AutoE2E
+├── requirements.txt             # Python package dependencies
+├── baseline-prompts.md          # Baseline prompts used for evaluation
+├── README.md                    # Project documentation
+├── workflow.png                 # Workflow diagram
+├── .env.example                 # Environment variables template
+│
+├── autoe2e/                     # Main source code directory
+│   ├── __init__.py
+│   ├── prompts.py               # LLM prompts for context and feature extraction
+│   ├── llm_api_call.py          # API calls to LLM providers (Anthropic, OpenAI)
+│   ├── infer_utils.py           # Inference utilities and model chains
+│   ├── init_utils.py            # Initialization utilities
+│   ├── loop_utils.py            # Main loop logic for test generation
+│   ├── manual_ndd.py            # Manual navigation and interaction logic
+│   ├── mongo_utils.py           # MongoDB database operations
+│   │
+│   ├── browser/                 # Browser automation components
+│   │   ├── driver.py            # WebDriver setup and configuration
+│   │   └── utils.py             # Browser utility functions
+│   │
+│   ├── crawler/                 # Web crawling functionality
+│   │   ├── crawl_context.py     # Crawling context management
+│   │   ├── action/              # Action-related modules
+│   │   ├── config/              # Crawler configuration
+│   │   └── state/               # State management
+│   │
+│   └── utils/                   # General utilities
+│       ├── hash.py              # Hashing utilities
+│       ├── logger.py            # Logging configuration
+│       ├── queue.py             # Queue data structures
+│       └── singleton.py         # Singleton pattern implementation
+│
+├── benchmark/                   # Evaluation subjects and testing server
+│   ├── _log-server/             # Server for tracking feature execution
+│   │   ├── extract.py           # Flask app for coverage evaluation
+│   │   ├── coverage.py          # Coverage calculation logic
+│   │   └── requirements.txt     # Server dependencies
+│   │
+│   ├── dimeshift/               # DimeShift application subject
+│   ├── ever-traduora/           # Ever Traduora application subject
+│   ├── mantisbt/                # MantisBT application subject
+│   ├── pet-clinic/              # PetClinic application subject
+│   ├── realworld/               # RealWorld application subject
+│   ├── saleor/                  # Saleor application subject
+│   └── taskcafe/                # TaskCafe application subject
+│
+└── configs/                     # Application configuration files
+    ├── ADMIN.json               # Admin application config
+    ├── DIMESHIFT.json           # DimeShift config
+    ├── EVERTRADUORA.json        # Ever Traduora config
+    ├── MANTISBT.json            # MantisBT config
+    ├── PETCLINIC.json           # PetClinic config
+    ├── REALWORLD.json           # RealWorld config
+    ├── SALEOR.json              # Saleor config
+    └── TASKCAFE.json            # TaskCafe config
+```
+
+
+## Prerequisites
+
+- **Python 3.11 or higher** is required to run this project. The installation will fail on older Python versions.
+
+To check your Python version:
+```bash
+python --version
+```
+
+If you need to install or upgrade Python, visit [python.org/downloads](https://www.python.org/downloads/).
+
+## Setup
+
+### Virtual Environment (Recommended)
+
+It is strongly recommended to use a virtual environment to isolate project dependencies and avoid conflicts with other Python projects.
+
+**Option 1: Using venv (built-in)**
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 2: Using virtualenv**
+
+```bash
+# Install virtualenv if not already installed
+pip install virtualenv
+
+# Create virtual environment
+virtualenv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 3: Using conda**
+
+```bash
+# Create virtual environment
+conda create -n autoe2e python=3.11
+
+# Activate environment
+conda activate autoe2e
+```
+
+Once activated, your terminal prompt should show the environment name (e.g., `(venv)` or `(autoe2e)`).
+
+
 ## Requirements
 
 Install the required packages using the following command:
@@ -11,6 +133,53 @@ Install the required packages using the following command:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Setup
+
+### Virtual Environment (Recommended)
+
+It is strongly recommended to use a virtual environment to isolate project dependencies and avoid conflicts with other Python projects.
+
+**Option 1: Using venv (built-in)**
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 2: Using virtualenv**
+
+```bash
+# Install virtualenv if not already installed
+pip install virtualenv
+
+# Create virtual environment
+virtualenv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Option 3: Using conda**
+
+```bash
+# Create virtual environment
+conda create -n autoe2e python=3.11
+
+# Activate environment
+conda activate autoe2e
+```
+
+Once activated, your terminal prompt should show the environment name (e.g., `(venv)` or `(autoe2e)`).
 
 ## Usage
 
