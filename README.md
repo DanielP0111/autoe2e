@@ -183,6 +183,25 @@ Once activated, your terminal prompt should show the environment name (e.g., `(v
 
 ## Usage
 
+### Docker (Recommended)
+
+The easiest way to run AutoE2E is using Docker Compose. See [DOCKER.md](DOCKER.md) for complete setup instructions.
+
+**Quick start:**
+```bash
+cd autoe2e
+# Create .env file with your API keys
+docker-compose up --build
+```
+
+### Local Development
+
+Before running the project locally, you need to set the environment variables in the `.env` file. This includes:
+
+1. `APP_NAME`: The name of the application you want to generate E2E test cases for. This needs to match one of the configs in `./configs` folder.
+2. `ANTHROPIC_API_KEY`: The API key for the Anthropic platform. You can get this by signing up at [Anthropic](https://anthropic.com/).
+3. `OPENAI_API_KEY`: The API key for OpenAI (required for embeddings). Get this at [OpenAI Platform](https://platform.openai.com/).
+4. `ATLAS_URI`: The MongoDB Atlas URI for storing the Action-Feature Database (AFD) and Feature Database (FD).
 Before running the project, you need to create and configure a `.env` file with the required environment variables.
 
 ### Step 1: Create the .env file
@@ -255,6 +274,8 @@ Once your `.env` file is configured with the appropriate values, you can run the
 ```bash
 python main.py
 ```
+
+**Note:** For local development, you'll also need to manually start the backend and frontend services. See the benchmark applications for setup instructions.
 
 ## LLM Prompts
 
